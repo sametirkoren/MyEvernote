@@ -7,22 +7,23 @@
 <div class="container">
 
     <div class="row">
-
         <div class="col-lg-3">
-
-            <h1 class="my-4">Shop Name</h1>
+            @*Kategoriler*@
+            <h1 class="my-4">Kategoriler</h1>
             <div class="list-group">
-                <a href="#" class="list-group-item">Category 1</a>
-                <a href="#" class="list-group-item">Category 2</a>
-                <a href="#" class="list-group-item">Category 3</a>
+                <a href="#" class="list-group-item text-black-50 font-weight-bold"><span class="fas fa-arrow-right text-black-50"></span>Tümü</a>
+                <a href="#" class="list-group-item text-black-50"><span class="fas fa-arrow-right text-black-50"></span>Kategori 1</a>
+                <a href="#" class="list-group-item text-black-50"><span class="fas fa-arrow-right text-black-50"></span>Kategori 2</a>
+                <a href="#" class="list-group-item text-black-50"><span class="fas fa-arrow-right text-black-50"></span>Kategori 3</a>
             </div>
 
         </div>
         <!-- /.col-lg-3 -->
 
         <div class="col-lg-9">
-
+            @*Carousel*@
             <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -50,7 +51,7 @@
             </div>
 
             <div class="row">
-
+                @*Yazılar*@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
                         <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
@@ -58,11 +59,14 @@
                             <h4 class="card-title">
                                 <a href="#">Item One</a>
                             </h4>
-                            <h5>$24.99</h5>
+                            <h6><span class="fas fa-user"></span>sametirkoren</h6>
+                            <h6><span class="fas fa-clock">01.01.2017 13:34</span></h6>
+
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            <button  type="button" class="btn btn-outline-secondary float-left"><span class="fas fa-heart text-danger mr-1"></span>15</button>
+                            <button type="button" class="btn btn-outline-secondary float-right"><span class="fas fa-comment text-danger mr-1"></span>Yorumlar</button>
                         </div>
                     </div>
                 </div>

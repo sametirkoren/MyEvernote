@@ -961,7 +961,9 @@ readers do not read off random characters that represent icons */
   content: "\f46d"; }
 
 .fa-clock:before {
-  content: "\f017"; }
+  content: "\f017"; 
+  margin-right : 5px;
+}
 
 .fa-clone:before {
   content: "\f24d"; }
@@ -4060,7 +4062,9 @@ readers do not read off random characters that represent icons */
   content: "\f287"; }
 
 .fa-user:before {
-  content: "\f007"; }
+  content: "\f007";
+  margin-right : 5px;
+ }
 
 .fa-user-alt:before {
   content: "\f406"; }
