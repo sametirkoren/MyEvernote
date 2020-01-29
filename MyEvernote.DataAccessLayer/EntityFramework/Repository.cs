@@ -1,4 +1,5 @@
 ﻿using MyEvernote.DataAccessLayer;
+using MyEvernote.DataAccessLayer.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,15 +8,15 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyEvernote.BusinessLayer
+namespace MyEvernote.DataAccessLayer.EntityFramework
 {
-    public class Repository<T> where T: class
+    public class Repository<T> : RepositoryBase , IRepository<T> where T: class
     {
-        private DatabaseContext db = new DatabaseContext();
+      
         private DbSet<T> _objectSet;
         public Repository()
         {
-            _objectSet = db.Set<T>();
+            _objectSet = context.Set<T>();
         }
 
         public List<T> List()
@@ -48,7 +49,7 @@ namespace MyEvernote.BusinessLayer
 
         public int Save()
         {
-            return db.SaveChanges();
+            return context.SaveChanges();
         }
 
         public T Find(Expression<Func<T,bool>> where)

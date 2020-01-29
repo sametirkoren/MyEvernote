@@ -1,4 +1,5 @@
-﻿using MyEvernote.Entities;
+﻿using MyEvernote.DataAccessLayer.EntityFramework;
+using MyEvernote.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +43,16 @@ namespace MyEvernote.BusinessLayer
             if(user != null)
             {
                 user.Username = "xxx";
-                int result = repo_user.Save();
+                int result = repo_user.Update(user);
+            }
+        }
+
+        public void DeleteTest()
+        {
+            EvernoteUser user = repo_user.Find(x => x.Username == "xxx");
+            if(user != null)
+            {
+                int result = repo_user.Delete(user);
             }
         }
     }
