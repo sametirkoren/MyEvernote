@@ -14,3 +14,5 @@ C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\De
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.csproj.CopyComplete
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.dll
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.pdb
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\FakeData.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\FakeData.pdb
