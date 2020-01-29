@@ -1,0 +1,15 @@
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\MyEvernote.DataAccessLayer.dll.config
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\MyEvernote.DataAccessLayer.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\MyEvernote.DataAccessLayer.pdb
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\FakeData.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\MyEvernote.Entities.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\MyEvernote.Entities.pdb
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\FakeData.pdb
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\obj\Debug\MyEvernote.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\obj\Debug\MyEvernote.DataAccessLayer.csproj.CopyComplete
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\obj\Debug\MyEvernote.DataAccessLayer.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\obj\Debug\MyEvernote.DataAccessLayer.pdb

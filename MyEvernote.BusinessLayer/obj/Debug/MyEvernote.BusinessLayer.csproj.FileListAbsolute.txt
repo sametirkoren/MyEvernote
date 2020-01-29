@@ -1,0 +1,16 @@
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.BusinessLayer.dll.config
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.BusinessLayer.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.BusinessLayer.pdb
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.DataAccessLayer.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Entities.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.DataAccessLayer.pdb
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.DataAccessLayer.dll.config
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Entities.pdb
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.csproj.CopyComplete
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.pdb

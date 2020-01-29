@@ -46,3 +46,15 @@ C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\obj\Debug\MyE
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\obj\Debug\MyEvernote.WebApp.csproj.CopyComplete
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\obj\Debug\MyEvernote.WebApp.dll
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\obj\Debug\MyEvernote.WebApp.pdb
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\EntityFramework.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\EntityFramework.SqlServer.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.BusinessLayer.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.Entities.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.DataAccessLayer.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.BusinessLayer.pdb
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.BusinessLayer.dll.config
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.Entities.pdb
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\EntityFramework.xml
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\EntityFramework.SqlServer.xml
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.DataAccessLayer.pdb
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.DataAccessLayer.dll.config
