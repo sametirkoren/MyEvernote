@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEvernote.BusinessLayer", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEvernote.DataAccessLayer", "MyEvernote.DataAccessLayer\MyEvernote.DataAccessLayer.csproj", "{9912771C-D6C2-49BF-8AF1-E80FBD5AC701}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEvernote.Entities", "MyEvernote.Entities\MyEvernote.Entities.csproj", "{F9194D23-1550-497F-A5FA-0B58548BB3B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9912771C-D6C2-49BF-8AF1-E80FBD5AC701}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9912771C-D6C2-49BF-8AF1-E80FBD5AC701}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9912771C-D6C2-49BF-8AF1-E80FBD5AC701}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9194D23-1550-497F-A5FA-0B58548BB3B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9194D23-1550-497F-A5FA-0B58548BB3B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9194D23-1550-497F-A5FA-0B58548BB3B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9194D23-1550-497F-A5FA-0B58548BB3B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
