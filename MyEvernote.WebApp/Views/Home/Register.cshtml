@@ -1,0 +1,57 @@
+﻿@using MyEvernote.WebApp.ViewModels
+@model RegisterViewModel
+@{
+    ViewBag.Title = "MyEvernote - Kayıt Sayfası";
+}
+<link href="~/Content/login-register.css" rel="stylesheet" />
+
+@using (Html.BeginForm())
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Kayıt Ol</h5>
+                        <form class="form-signin">
+                            <div class="form-label-group">
+
+                                @Html.TextBoxFor(model => model.Username, new { @class = "form-control", placeholder = "Kullanıcı adınız", id = "inputUsername" })
+                                <label for="inputUsername">Kullanıcı Adınız</label>
+                            </div>
+
+                            <div class="form-label-group">
+
+                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "E-Posta Adresiniz", id = "inputEmail" })
+                                <label for="inputEmail">Email Adresiniz</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder = "Şifreniz", type = "password", id = "inputPassword" })
+                                <label for="inputPassword">Şifreniz</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                @Html.TextBoxFor(model => model.RePassword, new { @class = "form-control", placeholder = "Tekrar Şifreniz", type = "password", id = "inputRePassword" })
+                                <label for="inputRePassword">Tekrar Şifreniz</label>
+                            </div>
+
+
+                            <button style="text-transform : none !important;" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Kayıt Ol</button>
+                            <hr class="my-4">
+                            <button style="text-transform : none !important;" class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Google ile Kayıt Ol</button>
+                            <button style="text-transform : none !important;" class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Facebook ile Kayıt Ol</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+<script>
+    $(function () {
+        $("footer").hide();
+    });
+</script>
