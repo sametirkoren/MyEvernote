@@ -1,0 +1,17 @@
+﻿@using MyEvernote.BusinessLayer
+@using MyEvernote.Entities
+@{ 
+    CategoryManager cm = new CategoryManager();
+    List<Category> list = cm.GetCategories();
+}
+
+<h1 class="my-4">Kategoriler</h1>
+<div class="list-group">
+    <a href="/Home/Index" class="list-group-item text-black-50 font-weight-bold"><span class="fas fa-arrow-right text-black-50"></span>Tümü</a>
+    @foreach (Category cat in list)
+    {
+        <a href="/Category/Select/@cat.Id" title="@cat.Description" class="list-group-item text-black-50"><span class="fas fa-arrow-right text-black-50"></span>@cat.Title</a>
+    }
+
+
+</div>
