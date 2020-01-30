@@ -1,4 +1,5 @@
-﻿using MyEvernote.DataAccessLayer;
+﻿using MyEvernote.Common;
+using MyEvernote.DataAccessLayer;
 using MyEvernote.DataAccessLayer.Abstract;
 using MyEvernote.Entities;
 using System;
@@ -41,7 +42,7 @@ namespace MyEvernote.DataAccessLayer.EntityFramework
 
                 o.CreatedOn = now;
                 o.ModifiedOn = now;
-                o.ModifiedUsername =  "system"; // TODO : İşlem yapan kullanıcı adı yazılmalı...
+                o.ModifiedUsername =  App.Common.GetUsername(); // TODO : İşlem yapan kullanıcı adı yazılmalı...
             }
 
             return Save();
@@ -54,7 +55,7 @@ namespace MyEvernote.DataAccessLayer.EntityFramework
                 MyEntityBase o = obj as MyEntityBase;
                
                 o.ModifiedOn = DateTime.Now;
-                o.ModifiedUsername = "system"; // TODO : İşlem yapan kullanıcı adı yazılmalı...
+                o.ModifiedUsername = App.Common.GetUsername(); // TODO : İşlem yapan kullanıcı adı yazılmalı...
             }
 
             return Save();

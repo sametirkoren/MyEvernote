@@ -159,9 +159,16 @@ namespace MyEvernote.WebApp.Controllers
         }
 
 
+        public ActionResult UserActivate(Guid activate_id)
+        {
+            // Kullanıcı aktivasyonu sağlanacak... 
+            return View();
+        }
+
         public ActionResult Logout()
         {
-            return View();
+            Session.Clear();
+            return RedirectToAction("Index");
         }
 
     }
