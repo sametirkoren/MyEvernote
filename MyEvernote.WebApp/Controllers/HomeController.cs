@@ -20,7 +20,8 @@ namespace MyEvernote.WebApp.Controllers
             //    return View(TempData["mm"] as List<Note>);
             //}
             NoteManager nm = new NoteManager();
-            return View(nm.GetAllNote());
+            return View(nm.GetAllNote().OrderByDescending(x=>x.ModifiedOn).ToList());
+            //return View(nm.GetAllNoteQueryable().OrderByDescending(x => x.ModifiedOn).ToList());
         }
 
         public ActionResult ByCategory(int? id)
@@ -37,7 +38,15 @@ namespace MyEvernote.WebApp.Controllers
                 return HttpNotFound();
             }
 
-            return View("Index", cat.Notes);
+            return View("Index", cat.Notes.OrderByDescending(x=>x.ModifiedOn).ToList());
         }
+
+        public ActionResult MostLiked()
+        {
+            NoteManager nm = new NoteManager();
+            return View("Index" , nm.GetAllNote().OrderByDescending(x => x.LikeCount).ToList());
+            
+        }
+
     }
 }
