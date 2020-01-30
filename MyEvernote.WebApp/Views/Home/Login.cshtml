@@ -1,4 +1,4 @@
-﻿@using MyEvernote.WebApp.ViewModels
+﻿@using MyEvernote.Entities.ValueObjects
 @model LoginViewModel
 @{
     ViewBag.Title = "MyEvernote - Giriş Sayfası";
@@ -14,7 +14,8 @@
                     <div class="card-body">
                         <h5 class="card-title text-center">Giriş Yap</h5>
                         <form class="form-signin">
-                            <div class="form-label-group">
+                            @Html.ValidationSummary(false)
+                            <div class="form-label-group mt-3">
 
                                 @Html.TextBoxFor(model => model.Username, new { @class = "form-control", placeholder = "Kullanıcı adınız"  , id="inputUsername" })
                                 <label for="inputUsername">Kullanıcı Adınız</label>

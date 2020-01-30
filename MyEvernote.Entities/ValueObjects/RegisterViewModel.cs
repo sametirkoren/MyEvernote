@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace MyEvernote.WebApp.ViewModels
+namespace MyEvernote.Entities.ValueObjects
 {
     public class RegisterViewModel
     {
@@ -18,7 +18,7 @@ namespace MyEvernote.WebApp.ViewModels
         [DisplayName("Şifre"), Required(ErrorMessage = "{0} alanı boş geçilemez."), DataType(DataType.Password), StringLength(25, ErrorMessage = "{0} max. {1} karakter olmalı.")]
         public string Password { get; set; }
 
-        [DisplayName("Şifre Tekrar"), Required(ErrorMessage = "{0} alanı boş geçilemez."), DataType(DataType.Password), StringLength(25, ErrorMessage = "{0} max. {1} karakter olmalı.") , Compare("Password",ErrorMessage ="{0} ile {1}")]
+        [DisplayName("Şifre Tekrar"), Required(ErrorMessage = "{0} alanı boş geçilemez."), DataType(DataType.Password), StringLength(25, ErrorMessage = "{0} max. {1} karakter olmalı.") , Compare("Password",ErrorMessage ="{0} ile {1} aynı değil.")]
         public string RePassword { get; set; }
     }
 }
