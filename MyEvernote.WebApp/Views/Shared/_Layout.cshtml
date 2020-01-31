@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using MyEvernote.Entities
+
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -26,21 +28,31 @@
 </head>
 
 <body>
-  
+    @{ 
+        EvernoteUser user = null;
+        if(Session["login"] != null)
+        {
+            user = Session["login"] as EvernoteUser;
+        }
+    }
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">My Evernote</a>
+            <a class="navbar-brand" href="/Home/Index">My Evernote</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span class="fas fa-wrench mr-1"></span>Yönetim
-                        </a>
-                    </li>
+                    @if (user != null)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span class="fas fa-wrench mr-1"></span>Yönetim
+                            </a>
+                        </li>
+                    }
+
                     <li class="nav-item">
                         <a class="nav-link" href="/Home/MostLiked">
                             <span class="fas fa-heart mr-1"></span>En Beğenilenler
@@ -58,25 +70,34 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li>
-                        <a class="nav-link" href="#">
-                            <span class="fas fa-sign-in-alt mr-1"></span> Giriş
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">
-                            <span class="fas fa-user mr-1"></span>Üye Ol
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">
-                            <span class="fas fa-user mr-1"></span>sametirkoren</a>
-                    </li>
+                    @if (user == null)
+                    {
+                        <li>
+                            <a class="nav-link" href="/Home/Login">
+                                <span class="fas fa-sign-in-alt mr-1"></span> Giriş
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/Home/Register">
+                                <span class="fas fa-user mr-1"></span>Üye Ol
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a class="nav-link" href="/Home/Profile">
+                                <span class="fas fa-user mr-1"></span>@user.Username
+                            </a>
+                        </li>
 
-                    <li>
-                        <a class="nav-link" href="#">
-                            <span class="fas fa-door-open mr-1"></span>Çıkış</a>
-                    </li>
+                        <li>
+                            <a class="nav-link" href="/Home/Logout">
+                                <span class="fas fa-door-open mr-1"></span>Çıkış
+                            </a>
+                        </li>
+                    }
+
                 </ul>
             </div>
         </div>
