@@ -69,13 +69,20 @@ namespace MyEvernote.WebApp.Controllers
             {
                 EvernoteUserManager eum = new EvernoteUserManager();
                 BusinessLayerResult<EvernoteUser> res = eum.LoginUser(model);
+                //if (res.Errors.Count > 0)
+                //{
+                //    if (res.Errors.Find(x=>x.Code == ErrorMessageCode.UserIsNotActive) != null)
+                //    {
+                //        ViewBag.SetLink = "http:/Home/Activate/1234-4567-7890";
+                //    }
+                //    res.Errors.ForEach(x => ModelState.AddModelError("", x.Message));
+                //    return View(model);
+                //}
+
                 if (res.Errors.Count > 0)
                 {
-                    if (res.Errors.Find(x=>x.Code == ErrorMessageCode.UserIsNotActive) != null)
-                    {
-                        ViewBag.SetLink = "http:/Home/Activate/1234-4567-7890";
-                    }
                     res.Errors.ForEach(x => ModelState.AddModelError("", x.Message));
+
                     return View(model);
                 }
 
@@ -159,10 +166,36 @@ namespace MyEvernote.WebApp.Controllers
         }
 
 
-        public ActionResult UserActivate(Guid activate_id)
+        public ActionResult UserActivate(Guid id)
         {
             // Kullanıcı aktivasyonu sağlanacak... 
+            EvernoteUserManager eum = new EvernoteUserManager();
+            BusinessLayerResult<EvernoteUser> res = eum.ActivateUser(id);
+          
+                if (res.Errors.Count > 0)
+                {
+                    TempData["errors"] = res.Errors;
+                    return RedirectToAction("UserActivateCancel");
+                }
+
+            return RedirectToAction("UserActivateOk");
+
+
+        }
+
+        public ActionResult UserActivateOK()
+        {
             return View();
+        }
+
+        public ActionResult UserActivateCancel()
+        {
+            List<ErrorMessageObj> errors = null;
+            if (TempData["errors"] != null)
+            {
+                errors = TempData["errors"] as List<ErrorMessageObj>;
+            }
+            return View(errors);
         }
 
         public ActionResult Logout()
