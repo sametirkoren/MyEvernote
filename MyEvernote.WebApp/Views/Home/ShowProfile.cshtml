@@ -1,0 +1,62 @@
+﻿@using MyEvernote.Entities
+@model EvernoteUser
+@{
+    ViewBag.Title = "Kullanıcı Profili";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="~/Content/showProfile.css" rel="stylesheet" />
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container emp-profile" style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="~/Images/@Model.ProfileImageFile" width="128" height="128" alt="">
+
+                </div>
+                <div class="text-center mt-3">
+                    <a href="@Url.Action("EditProfile")" class="btn btn-outline-secondary" style="background: #36a2eb; color:white;">
+                        Düzenle
+                    </a>
+                    <a href="@Url.Action("DeleteProfile")" onclick="return confirm('Hesabınızı silmek istediğinize emin misiniz ?');" class="btn btn-danger" style="color:white;">
+                        Sil
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="col-md-8">
+                <div class="profile-head text-center">
+                    <h5 class="mt-4">
+                        @Model.Name @Model.Surname
+                    </h5>
+
+
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Hakkımda</a>
+                        </li>
+
+                    </ul>
+                    <ul class="list-group">
+                        <li style="border-bottom: 4px solid #36a2eb;" class="list-group-item list-group-item-action">Kullanıcı Adı : @Model.Username</li>
+                        <li style="border-bottom: 4px solid #36a2eb;" class="list-group-item list-group-item-action" list-group-item="">Ad - Soyad    : @Model.Name @Model.Surname</li>
+                        <li class="list-group-item">E-Mail Adresi : @Model.Email</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+<script>
+    $(function () {
+        $("footer").hide();
+    });
+</script>

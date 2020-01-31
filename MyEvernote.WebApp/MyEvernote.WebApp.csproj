@@ -112,6 +112,7 @@
     <Content Include="Content\regular.css" />
     <Content Include="Content\regular.min.css" />
     <Content Include="Content\shop-homepage.css" />
+    <Content Include="Content\showProfile.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\solid.css" />
     <Content Include="Content\solid.min.css" />
@@ -121,6 +122,7 @@
     <Content Include="Content\v4-shims.min.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\img-boy.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -292,6 +294,8 @@
     <Content Include="Views\Home\RegisterOk.cshtml" />
     <Content Include="Views\Home\UserActivateOK.cshtml" />
     <Content Include="Views\Home\UserActivateCancel.cshtml" />
+    <Content Include="Views\Home\ShowProfile.cshtml" />
+    <Content Include="Views\Home\EditProfile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
