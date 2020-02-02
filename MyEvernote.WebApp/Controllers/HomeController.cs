@@ -2,7 +2,7 @@
 using MyEvernote.Entities;
 using MyEvernote.Entities.Messages;
 using MyEvernote.Entities.ValueObjects;
-
+using MyEvernote.WebApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,7 +66,12 @@ namespace MyEvernote.WebApp.Controllers
 
             if (res.Errors.Count > 0)
             {
-                // TODO : Kullanıcıyı bir hata ekranına yönlendirmek gerekiyor...
+                ErrorViewModel errorNotifyObj = new ErrorViewModel()
+                {
+                    Title = "Hata Oluştu",
+                    Items = res.Errors
+                };
+                return View("Error", errorNotifyObj);
             }
             return View(res.Result);
         }
@@ -84,6 +89,22 @@ namespace MyEvernote.WebApp.Controllers
         public ActionResult RemoveProfile()
         {
             return View();
+        }
+
+        public ActionResult TestNotify()
+        {
+            ErrorViewModel model = new ErrorViewModel()
+            {
+                Header = "Yönlendirme...",
+                Title = "Ok Test",
+                RedirectingTimeout = 3000,
+                Items = new List<ErrorMessageObj>()
+                {
+                    new ErrorMessageObj() { Message = "Test başarılı 1" },
+                    new ErrorMessageObj() { Message = "Test başarılı 2" }
+                }
+            };
+            return View("Error" , model);
         }
 
         public ActionResult Login()
@@ -138,6 +159,7 @@ namespace MyEvernote.WebApp.Controllers
 
             if (ModelState.IsValid)
             {
+                
                 EvernoteUserManager eum = new EvernoteUserManager();
                 BusinessLayerResult<EvernoteUser> res = eum.RegisterUser(model);
 
@@ -182,19 +204,20 @@ namespace MyEvernote.WebApp.Controllers
                 //    return View(model);
                 //}
 
-                return RedirectToAction("RegisterOk");
+                OkViewModel notifyObj = new OkViewModel()
+                {
+                    Title = "Kayıt Başarılı",
+                    RedirectingUrl = "/Home/Login",
+                };
+                notifyObj.Items.Add("Lütfen e-posta adresine gönderdiğimiz aktivasyon link'ine tıklayarak hesabınızı aktive ediniz.Hesabınızı aktive etmeden not ekleyemez ve beğenme yapamazsınız. ");
+                return View("Ok" , notifyObj);
             }
             return View(model);
 
 
         }
 
-        public ActionResult RegisterOk()
-        {
-            return View();
-        }
-
-
+     
         public ActionResult UserActivate(Guid id)
         {
             // Kullanıcı aktivasyonu sağlanacak... 
@@ -203,29 +226,29 @@ namespace MyEvernote.WebApp.Controllers
           
                 if (res.Errors.Count > 0)
                 {
-                    TempData["errors"] = res.Errors;
-                    return RedirectToAction("UserActivateCancel");
+                    ErrorViewModel ErrornotifyObj = new ErrorViewModel()
+                    {
+                        Title = "Geçersiz işlem",
+                        Items = res.Errors
+                    };
+
+                return View("Error", ErrornotifyObj);
+                    
                 }
 
-            return RedirectToAction("UserActivateOk");
-
-
-        }
-
-        public ActionResult UserActivateOK()
-        {
-            return View();
-        }
-
-        public ActionResult UserActivateCancel()
-        {
-            List<ErrorMessageObj> errors = null;
-            if (TempData["errors"] != null)
+            OkViewModel OknotifyObj = new OkViewModel()
             {
-                errors = TempData["errors"] as List<ErrorMessageObj>;
-            }
-            return View(errors);
+                    Title="Hesap Aktifleştirildi.",
+                    RedirectingUrl = "/Home/Login",
+
+            };
+                OknotifyObj.Items.Add("Hesabınız aktifleştirildi. Artık not paylaşabilir ve beğenme yapabilirsiniz.");
+                return View("Ok",OknotifyObj);
+
+
         }
+
+       
 
         public ActionResult Logout()
         {

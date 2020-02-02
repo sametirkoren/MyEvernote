@@ -43,6 +43,7 @@ namespace MyEvernote.BusinessLayer
                     Username = data.Username,
                     Password = data.Password,
                     Email = data.Email,
+                    ProfileImageFile = "img-boy.png",
                     ActivateGuid = Guid.NewGuid(),
                     IsActive = false,
                     IsAdmin = false,
