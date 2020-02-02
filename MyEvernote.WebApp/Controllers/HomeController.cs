@@ -78,17 +78,75 @@ namespace MyEvernote.WebApp.Controllers
 
         public ActionResult EditProfile()
         {
-            return View();
+            EvernoteUser currentUser = Session["login"] as EvernoteUser;
+            EvernoteUserManager eum = new EvernoteUserManager();
+            BusinessLayerResult<EvernoteUser> res = eum.GetUserById(currentUser.Id);
+
+            if (res.Errors.Count > 0)
+            {
+                ErrorViewModel errorNotifyObj = new ErrorViewModel()
+                {
+                    Title = "Hata Oluştu",
+                    Items = res.Errors
+                };
+
+                return View("Error", errorNotifyObj);
+            }
+            return View(res.Result);
         }
 
-        public ActionResult EditProfile(EvernoteUser user)
+        [HttpPost]
+        public ActionResult EditProfile(EvernoteUser model , HttpPostedFileBase ProfileImage)
         {
-            return View();
-        }
+            if(ProfileImage !=null && (ProfileImage.ContentType == "image/jpeg" ||ProfileImage.ContentType == "image/jpg" || ProfileImage.ContentType == "image/png"))
+            {
+                string filename = $"user_{model.Id}.{ProfileImage.ContentType.Split('/')[1]}";
+                ProfileImage.SaveAs(Server.MapPath($"~/Images/{filename}"));
+                model.ProfileImageFile = filename;
+            }
 
-        public ActionResult RemoveProfile()
+            EvernoteUserManager eum = new EvernoteUserManager();
+            BusinessLayerResult<EvernoteUser> res = eum.UpdateProfile(model);
+
+            if(res.Errors.Count > 0)
+            {
+                ErrorViewModel errorNotifyObj = new ErrorViewModel()
+                {
+                    Items = res.Errors,
+                    Title = "Profil Güncellenemedi.",
+                    RedirectingUrl = "/Home/EditProfile"
+                };
+
+                return View("Error", errorNotifyObj);
+            }
+
+            Session["login"] = res.Result;
+
+            return RedirectToAction("ShowProfile");
+             
+         }
+
+        public ActionResult DeleteProfile()
         {
-            return View();
+            EvernoteUser currentUser = Session["login"] as EvernoteUser;
+
+            EvernoteUserManager eum = new EvernoteUserManager();
+            BusinessLayerResult<EvernoteUser> res = eum.RemoveUserById(currentUser.Id);
+
+            if(res.Errors.Count > 0)
+            {
+                ErrorViewModel errorNotifyObj = new ErrorViewModel()
+                {
+                    Items = res.Errors,
+                    Title = "Profil Silinemedi",
+                    RedirectingUrl = "/Home/ShowProfile"
+                };
+
+                return View("Error", errorNotifyObj);
+            }
+
+            Session.Clear();
+            return RedirectToAction("Index");
         }
 
         public ActionResult TestNotify()
@@ -256,7 +314,7 @@ namespace MyEvernote.WebApp.Controllers
             return RedirectToAction("Index");
         }
 
-
+       
 
     }
 }
