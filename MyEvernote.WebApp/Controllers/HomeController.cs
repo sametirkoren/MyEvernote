@@ -98,31 +98,36 @@ namespace MyEvernote.WebApp.Controllers
         [HttpPost]
         public ActionResult EditProfile(EvernoteUser model , HttpPostedFileBase ProfileImage)
         {
-            if(ProfileImage !=null && (ProfileImage.ContentType == "image/jpeg" ||ProfileImage.ContentType == "image/jpg" || ProfileImage.ContentType == "image/png"))
+            ModelState.Remove("ModifiedUsername");
+            if (ModelState.IsValid)
             {
-                string filename = $"user_{model.Id}.{ProfileImage.ContentType.Split('/')[1]}";
-                ProfileImage.SaveAs(Server.MapPath($"~/Images/{filename}"));
-                model.ProfileImageFile = filename;
-            }
-
-            EvernoteUserManager eum = new EvernoteUserManager();
-            BusinessLayerResult<EvernoteUser> res = eum.UpdateProfile(model);
-
-            if(res.Errors.Count > 0)
-            {
-                ErrorViewModel errorNotifyObj = new ErrorViewModel()
+                if (ProfileImage != null && (ProfileImage.ContentType == "image/jpeg" || ProfileImage.ContentType == "image/jpg" || ProfileImage.ContentType == "image/png"))
                 {
-                    Items = res.Errors,
-                    Title = "Profil Güncellenemedi.",
-                    RedirectingUrl = "/Home/EditProfile"
-                };
+                    string filename = $"user_{model.Id}.{ProfileImage.ContentType.Split('/')[1]}";
+                    ProfileImage.SaveAs(Server.MapPath($"~/Images/{filename}"));
+                    model.ProfileImageFile = filename;
+                }
 
-                return View("Error", errorNotifyObj);
+                EvernoteUserManager eum = new EvernoteUserManager();
+                BusinessLayerResult<EvernoteUser> res = eum.UpdateProfile(model);
+
+                if (res.Errors.Count > 0)
+                {
+                    ErrorViewModel errorNotifyObj = new ErrorViewModel()
+                    {
+                        Items = res.Errors,
+                        Title = "Profil Güncellenemedi.",
+                        RedirectingUrl = "/Home/EditProfile"
+                    };
+
+                    return View("Error", errorNotifyObj);
+                }
+
+                Session["login"] = res.Result;
+
+                return RedirectToAction("ShowProfile");
             }
-
-            Session["login"] = res.Result;
-
-            return RedirectToAction("ShowProfile");
+            return View(model);
              
          }
 

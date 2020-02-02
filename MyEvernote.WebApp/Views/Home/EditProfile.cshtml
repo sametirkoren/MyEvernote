@@ -31,7 +31,7 @@
             <div class="col-md-3">
                 <div class="profile-img">
                     <img src="~/Images/@Model.ProfileImageFile" width="128" height="128" alt="">
-
+                    @Html.HiddenFor(model => model.ProfileImageFile)
                 </div>
                 <div class="text-center mt-3">
                     <input type="file" name="ProfileImage" id="ProfileImage" class="form-control mb-3">
