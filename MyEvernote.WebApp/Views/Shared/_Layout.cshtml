@@ -46,11 +46,28 @@
                 <ul class="navbar-nav mr-auto">
                     @if (user != null)
                     {
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+
+
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="/Note/MyNotes" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="fas fa-wrench mr-1"></span>Yönetim
                             </a>
-                        </li>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="/Note/AddNew"><span class="fas fa-plus"></span>Not Ekle</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/Note/MyNotes"><span class="fas fa-th-list"></span>Notlarım</a>
+                                <a class="dropdown-item" href="/Note/MyLikedNotes"><span class="fas fa-heart"></span>Beğendiklerim</a>
+
+
+                                @if (user.IsAdmin)
+                                {
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/Category/AddNew"><span class="fas fa-plus"></span>Kategori Ekle</a>
+                                    <a class="dropdown-item" href="/Category/List"><span class="fas fa-th-list"></span>Kategoriler</a>
+                                }
+                            </div>
+                        </div>
                     }
 
                     <li class="nav-item">
@@ -85,11 +102,25 @@
                     }
                     else
                     {
-                        <li>
-                            <a class="nav-link" href="/Home/ShowProfile">
+                     
+
+
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="/Home/ShowProfile" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="fas fa-user mr-1"></span>@user.Username
+
                             </a>
-                        </li>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="/Home/ShowProfile"><span class="fas fa-sign-in-alt"></span>Profili Göster</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/Home/EditProfile"><span class="fas fa-edit"></span>Profili Düzenle</a>
+                                <a class="dropdown-item" onclick="return confirm('Hesabınızı silmek istediğinize emin misiniz ?');"  href="/Home/DeleteProfile"><span class="fas fa-user-minus"></span>Profili Sil</a>
+
+
+                              
+                            </div>
+                        </div>
 
                         <li>
                             <a class="nav-link" href="/Home/Logout">
