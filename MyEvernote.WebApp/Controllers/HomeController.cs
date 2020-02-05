@@ -1,4 +1,5 @@
 ﻿using MyEvernote.BusinessLayer;
+using MyEvernote.BusinessLayer.Results;
 using MyEvernote.Entities;
 using MyEvernote.Entities.Messages;
 using MyEvernote.Entities.ValueObjects;
@@ -14,6 +15,10 @@ namespace MyEvernote.WebApp.Controllers
 {
     public class HomeController : Controller
     {
+
+        private NoteManager noteManager = new NoteManager();
+        private CategoryManager categoryManager = new CategoryManager();
+        private EvernoteUserManager eum = new EvernoteUserManager();
        
         public ActionResult Index()
         {
@@ -22,8 +27,8 @@ namespace MyEvernote.WebApp.Controllers
             //{
             //    return View(TempData["mm"] as List<Note>);
             //}
-            NoteManager nm = new NoteManager();
-            return View(nm.GetAllNote().OrderByDescending(x=>x.ModifiedOn).ToList());
+           
+            return View(noteManager.ListQueryable().OrderByDescending(x=>x.ModifiedOn).ToList());
             //return View(nm.GetAllNoteQueryable().OrderByDescending(x => x.ModifiedOn).ToList());
         }
 
@@ -33,8 +38,8 @@ namespace MyEvernote.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CategoryManager cm = new CategoryManager();
-            Category cat = cm.GetCategoryById(id.Value);
+            
+            Category cat = categoryManager.Find(x => x.Id == id.Value);
 
             if(cat == null)
             {
@@ -46,8 +51,8 @@ namespace MyEvernote.WebApp.Controllers
 
         public ActionResult MostLiked()
         {
-            NoteManager nm = new NoteManager();
-            return View("Index" , nm.GetAllNote().OrderByDescending(x => x.LikeCount).ToList());
+            
+            return View("Index" , noteManager.List().OrderByDescending(x => x.LikeCount).ToList());
             
         }
 
@@ -60,7 +65,7 @@ namespace MyEvernote.WebApp.Controllers
         public ActionResult ShowProfile()
         {
             EvernoteUser currentUser = Session["login"] as EvernoteUser;
-            EvernoteUserManager eum = new EvernoteUserManager();
+            
             BusinessLayerResult<EvernoteUser> res = eum.GetUserById(currentUser.Id);
 
 
@@ -79,7 +84,7 @@ namespace MyEvernote.WebApp.Controllers
         public ActionResult EditProfile()
         {
             EvernoteUser currentUser = Session["login"] as EvernoteUser;
-            EvernoteUserManager eum = new EvernoteUserManager();
+            
             BusinessLayerResult<EvernoteUser> res = eum.GetUserById(currentUser.Id);
 
             if (res.Errors.Count > 0)
@@ -108,7 +113,7 @@ namespace MyEvernote.WebApp.Controllers
                     model.ProfileImageFile = filename;
                 }
 
-                EvernoteUserManager eum = new EvernoteUserManager();
+             
                 BusinessLayerResult<EvernoteUser> res = eum.UpdateProfile(model);
 
                 if (res.Errors.Count > 0)
@@ -135,7 +140,7 @@ namespace MyEvernote.WebApp.Controllers
         {
             EvernoteUser currentUser = Session["login"] as EvernoteUser;
 
-            EvernoteUserManager eum = new EvernoteUserManager();
+          
             BusinessLayerResult<EvernoteUser> res = eum.RemoveUserById(currentUser.Id);
 
             if(res.Errors.Count > 0)
@@ -180,7 +185,7 @@ namespace MyEvernote.WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                EvernoteUserManager eum = new EvernoteUserManager();
+                
                 BusinessLayerResult<EvernoteUser> res = eum.LoginUser(model);
                 //if (res.Errors.Count > 0)
                 //{
@@ -223,7 +228,7 @@ namespace MyEvernote.WebApp.Controllers
             if (ModelState.IsValid)
             {
                 
-                EvernoteUserManager eum = new EvernoteUserManager();
+                
                 BusinessLayerResult<EvernoteUser> res = eum.RegisterUser(model);
 
 
@@ -284,7 +289,7 @@ namespace MyEvernote.WebApp.Controllers
         public ActionResult UserActivate(Guid id)
         {
             // Kullanıcı aktivasyonu sağlanacak... 
-            EvernoteUserManager eum = new EvernoteUserManager();
+           
             BusinessLayerResult<EvernoteUser> res = eum.ActivateUser(id);
           
                 if (res.Errors.Count > 0)

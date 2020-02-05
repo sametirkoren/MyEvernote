@@ -54,17 +54,17 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="/Note/AddNew"><span class="fas fa-plus"></span>Not Ekle</a>
+                                <a class="dropdown-item" href="/Note/AddNew"><span class="fas fa-plus mr-2"></span>Not Ekle</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/Note/MyNotes"><span class="fas fa-th-list"></span>Notlarım</a>
-                                <a class="dropdown-item" href="/Note/MyLikedNotes"><span class="fas fa-heart"></span>Beğendiklerim</a>
+                                <a class="dropdown-item" href="/Note/MyNotes"><span class="fas fa-th-list mr-2"></span>Notlarım</a>
+                                <a class="dropdown-item" href="/Note/MyLikedNotes"><span class="fas fa-heart mr-2"></span>Beğendiklerim</a>
 
 
                                 @if (user.IsAdmin)
                                 {
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/Category/AddNew"><span class="fas fa-plus"></span>Kategori Ekle</a>
-                                    <a class="dropdown-item" href="/Category/List"><span class="fas fa-th-list"></span>Kategoriler</a>
+                                    <a class="dropdown-item" href="/Category/Create"><span class="fas fa-plus mr-2"></span>Kategori Ekle</a>
+                                    <a class="dropdown-item" href="/Category/Index"><span class="fas fa-th-list mr-2"></span>Kategoriler</a>
                                 }
                             </div>
                         </div>
@@ -107,15 +107,15 @@
 
                         <div class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle" href="/Home/ShowProfile" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="fas fa-user mr-1"></span>@user.Username
+                                <span class="fas fa-user mr-2"></span>@user.Username
 
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="/Home/ShowProfile"><span class="fas fa-sign-in-alt"></span>Profili Göster</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/Home/EditProfile"><span class="fas fa-edit"></span>Profili Düzenle</a>
-                                <a class="dropdown-item" onclick="return confirm('Hesabınızı silmek istediğinize emin misiniz ?');"  href="/Home/DeleteProfile"><span class="fas fa-user-minus"></span>Profili Sil</a>
+                                <a class="dropdown-item" href="/Home/ShowProfile"><span class="fas fa-sign-in-alt mr-2"></span>Profili Göster</a>
+                                <div class="dropdown-divider "></div>
+                                <a class="dropdown-item" href="/Home/EditProfile"><span class="fas fa-edit mr-2"></span>Profili Düzenle</a>
+                                <a class="dropdown-item" onclick="return confirm('Hesabınızı silmek istediğinize emin misiniz ?');"  href="/Home/DeleteProfile"><span class="fas fa-user-minus mr-2"></span>Profili Sil</a>
 
 
                               

@@ -62,3 +62,5 @@ C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\FakeData.
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\FakeData.pdb
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.Common.dll
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.Common.pdb
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.Core.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.Core.pdb

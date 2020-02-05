@@ -18,3 +18,5 @@ C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\De
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\FakeData.pdb
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Common.dll
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Common.pdb
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Core.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Core.pdb

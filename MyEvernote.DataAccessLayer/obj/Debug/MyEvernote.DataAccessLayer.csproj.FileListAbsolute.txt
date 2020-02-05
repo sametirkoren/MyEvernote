@@ -15,3 +15,5 @@ C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\obj\
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\obj\Debug\MyEvernote.DataAccessLayer.pdb
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\MyEvernote.Common.dll
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\MyEvernote.Common.pdb
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\MyEvernote.Core.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.DataAccessLayer\bin\Debug\MyEvernote.Core.pdb
