@@ -117,6 +117,7 @@ namespace MyEvernote.WebApp.Controllers
         {
             Category category = categoryManager.Find(x => x.Id == id);
             categoryManager.Delete(category);
+            
             return RedirectToAction("Index");
         }
 
