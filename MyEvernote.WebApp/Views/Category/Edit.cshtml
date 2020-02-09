@@ -1,4 +1,5 @@
-﻿@model MyEvernote.Entities.Category
+﻿@using MyEvernote.WebApp
+@model MyEvernote.Entities.Category
 
 @{
     ViewBag.Title = "Edit";
@@ -57,8 +58,9 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <button type="submit" class="btn btn-success"><span class="fas fa-save mr-2"></span>Save</button>
-                        <a href="/Category/Index" class="btn btn-secondary" title="Index"><span class="fas fa-arrow-left mr-2"></span>Back To List</a>
+                        
+                        @Bootstrap.Button("success",string.Empty,"submit","save","Save")
+                        @Bootstrap.LinkButton("/Category/Index", "secondary", string.Empty, string.Empty, "arrow-left", "Back To List")
                     </div>
                 </div>
             </div>

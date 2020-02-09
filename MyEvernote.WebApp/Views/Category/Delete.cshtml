@@ -65,8 +65,10 @@
             @Html.AntiForgeryToken()
 
             <div class="form-actions no-color">
-                <button type="submit" class="btn btn-danger"><span class="fas fa-remove mr-2"></span>Delete</button>
-                <a href="/Category/Index" class="btn btn-secondary" title="Index"><span class="fas fa-arrow-left mr-2"></span>Back To List</a>
+                  @Bootstrap.Button("danger",string.Empty,"submit","trash","Delete")
+                  @Bootstrap.LinkButton("/Category/Index", "secondary", string.Empty, string.Empty, "arrow-left", "Back To List")
+           
+               
             </div>
         }
     </div>

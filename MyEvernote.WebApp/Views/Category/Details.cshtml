@@ -62,8 +62,10 @@
     </div>
     <div class="col-md-8 offset-md-2">
         <p>
-            <a href="/Category/Edit/@Model.Id" class="btn btn-warning" title="Edit"><span class="fas fa-edit mr-2"></span>Edit</a>
-            <a href="/Category/Index" class="btn btn-secondary" title="Index"><span class="fas fa-arrow-left mr-2"></span>Back To List</a>
+           
+            @Bootstrap.LinkButton("/Category/Edit" + @Model.Id, "warning", string.Empty, "Edit", "edit", "Edit")
+            @Bootstrap.LinkButton("/Category/Index", "secondary", string.Empty, string.Empty, "arrow-left", "Back To List")
+        
         </p>
 
     </div>
