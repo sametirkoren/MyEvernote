@@ -269,7 +269,7 @@ namespace MyEvernote.BusinessLayer
             res.Result.Username = data.Username;
             res.Result.IsActive = data.IsActive;
 
-           
+            res.Result.IsAdmin = data.IsAdmin;
 
             if (base.Update(res.Result) == 0)
             {
