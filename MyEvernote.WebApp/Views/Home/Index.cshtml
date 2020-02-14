@@ -65,25 +65,25 @@
                                 <p class="card-text">
                                     @if (string.IsNullOrEmpty(note.Text) == false && note.Text.Length > 70)
                                     {
-                                        <p>@(note.Text.Substring(0,70) + "...")</p>
-                                        <p class="float-right"><a href="#" class="btn btn-outline-secondary btn-sm">devamı <span class="fas fa-arrow-right"></span></a></p>
-                                    }
-                                   
-                                    else
-                                    {
-                                        <p>@note.Text</p>
+                                    <p>@(note.Text.Substring(0, 70) + "...")</p>
+                                    <p class="float-right"><a href="#" class="btn btn-outline-secondary btn-sm">devamı <span class="fas fa-arrow-right"></span></a></p>
+                                }
 
-                                    }
-                                </p>
-                                 <div class="clearfix"></div>
-                            </div>
-                            <div class="card-footer">
-                                <button type="button" class="btn btn-outline-secondary float-left"><span class="fas fa-heart text-danger mr-1"></span>@note.LikeCount</button>
-                                <button type="button" class="btn btn-outline-secondary float-right"><span class="fas fa-comment text-danger mr-1"></span>Yorumlar</button>
+                                else
+                                {
+                                    <p>@note.Text</p>
+
+                                }
+                                    </p>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-outline-secondary float-left"><span class="fas fa-heart text-danger mr-1"></span>@note.LikeCount</button>
+                                    <button type="button" class="btn btn-outline-secondary float-right" data-toggle="modal" data-target="#modal_comment"><span class="fas fa-comment text-danger mr-1"></span>Yorumlar</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                }
+                    }
 
 
 
@@ -99,3 +99,5 @@
 
 </div>
 <!-- /.container -->
+
+@Bootstrap.ModalPopUp(id: "modal_comment" , title: "Yorumlar")

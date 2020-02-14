@@ -1,4 +1,4 @@
-﻿@helper LinkButton(string id = "", string url = "", string color = "", string addtionalClass = "", string title = "", string icon = "",  string text = "")
+﻿@helper LinkButton(string id = "", string url = "", string color = "", string addtionalClass = "", string title = "", string icon = "", string text = "")
 {
     <a href="@url" id="@id" name="@id" class="btn btn-@color @addtionalClass" title="@title"><span class="fas fa-@icon mr-2"></span>@text</a>
 }
@@ -17,4 +17,33 @@
 @helper Button(string color = "", string addtionalClass = "", string type = "button", string icon = "", string text = "")
 {
     <button class="btn btn-@color @addtionalClass" type="@type"><span class="fas fa-@icon mr-2"></span>@text</button>
+}
+
+@helper ModalPopUp(string id="myModal" ,string title="Modal Title" , bool showCloseButton = true)
+{
+
+    <!-- Modal -->
+    <div class="modal fade" id="@id" name="@id" tabindex="-1" role="dialog" aria-labelledby="@(id + "_label")" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" id="@(id + "_header")">
+                    <h5 class="modal-title" id="@(id + "_label")">@title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="@(id + "_body")">
+                    
+                </div>
+                <div class="modal-footer" id="@(id + "_footer")">
+                    @if (showCloseButton)
+                    {
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    }
+
+
+                </div>
+            </div>
+        </div>
+    </div>
 }
