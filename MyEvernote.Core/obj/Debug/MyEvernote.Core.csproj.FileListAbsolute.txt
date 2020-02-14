@@ -2,3 +2,4 @@ C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.Core\bin\Debug\MyEve
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.Core\bin\Debug\MyEvernote.Core.pdb
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.Core\obj\Debug\MyEvernote.Core.dll
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.Core\obj\Debug\MyEvernote.Core.pdb
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.Core\obj\Debug\MyEvernote.Core.csprojAssemblyReference.cache

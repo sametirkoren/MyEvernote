@@ -3,6 +3,7 @@ using MyEvernote.BusinessLayer.Results;
 using MyEvernote.Entities;
 using MyEvernote.Entities.Messages;
 using MyEvernote.Entities.ValueObjects;
+using MyEvernote.WebApp.Models;
 using MyEvernote.WebApp.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -64,9 +65,8 @@ namespace MyEvernote.WebApp.Controllers
 
         public ActionResult ShowProfile()
         {
-            EvernoteUser currentUser = Session["login"] as EvernoteUser;
-            
-            BusinessLayerResult<EvernoteUser> res = eum.GetUserById(currentUser.Id);
+           
+            BusinessLayerResult<EvernoteUser> res = eum.GetUserById(CurrentSession.User.Id);
 
 
             if (res.Errors.Count > 0)
@@ -128,7 +128,7 @@ namespace MyEvernote.WebApp.Controllers
                     return View("Error", errorNotifyObj);
                 }
 
-                Session["login"] = res.Result;
+                CurrentSession.Set<EvernoteUser>("login", res.Result);
 
                 return RedirectToAction("ShowProfile");
             }
@@ -207,7 +207,7 @@ namespace MyEvernote.WebApp.Controllers
                 // yönlendirme
                 // Session'a kullanıcı bilgi saklama
 
-                Session["login"] = res.Result;
+                CurrentSession.Set<EvernoteUser>("login", res.Result);
                 return RedirectToAction("Index");
 
 

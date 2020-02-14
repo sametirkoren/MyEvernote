@@ -1,8 +1,7 @@
-﻿@using MyEvernote.BusinessLayer
+﻿@using MyEvernote.WebApp.Models
 @using MyEvernote.Entities
 @{ 
-    CategoryManager cm = new CategoryManager();
-    List<Category> list = cm.List();
+    List<Category> list = CacheHelper.GetCategoriesFromCache();
 }
 
 <h1 class="my-4">Kategoriler</h1>

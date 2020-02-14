@@ -64,3 +64,8 @@ C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernot
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.Common.pdb
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.Core.dll
 C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\MyEvernote.Core.pdb
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\Microsoft.Web.Helpers.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\WebMatrix.Data.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\WebMatrix.WebData.dll
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\WebMatrix.Data.xml
+C:\Users\vakidev\source\repos\MyEvernoteSolution\MyEvernote.WebApp\bin\WebMatrix.WebData.xml
