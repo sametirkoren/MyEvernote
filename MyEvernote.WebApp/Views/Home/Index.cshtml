@@ -79,7 +79,7 @@
                                 </div>
                                 <div class="card-footer">
                                     <button type="button" class="btn btn-outline-secondary float-left"><span class="fas fa-heart text-danger mr-1"></span>@note.LikeCount</button>
-                                    <button type="button" class="btn btn-outline-secondary float-right" data-toggle="modal" data-target="#modal_comment"><span class="fas fa-comment text-danger mr-1"></span>Yorumlar</button>
+                                    <button type="button" class="btn btn-outline-secondary float-right" data-toggle="modal" data-target="#modal_comment" data-note-id="@note.Id"><span class="fas fa-comment text-danger mr-1"></span>Yorumlar</button>
                                 </div>
                             </div>
                         </div>
@@ -101,3 +101,50 @@
 <!-- /.container -->
 
 @Bootstrap.ModalPopUp(id: "modal_comment" , title: "Yorumlar")
+
+<script>
+    $(function () {
+        $('#modal_comment').on('show.bs.modal', function (e) {
+            var btn = $(e.relatedTarget);
+            var noteid = btn.data("note-id");
+            $('#modal_comment_body').load("/Comment/ShowNoteComments/" + noteid);
+        });
+    });
+
+
+
+    function doComment(btn,e ,commentid , spanid) {
+
+        var button = $(btn);
+
+        var mode = button.data("edit-mode");
+
+        if (e === "edit_clicked") {
+
+            if (!mode) {
+
+                button.data("edit-mode", true);
+                button.removeClass("btn-warning");
+                button.addClass("btn-success");
+                var btnSpan = button.find("span");
+                btnSpan.removeClass("fas fa-edit mr-1");
+                btnSpan.addClass("fas fa-check mr-1");
+
+                $(spanid).attr("contenteditable", true);
+            } else {
+                button.data("edit-mode", false);
+                button.addClass("btn-warning");
+                button.removeClass("btn-success");
+                var btnSpan = button.find("span");
+           
+                btnSpan.removeClass("fas fa-check mr-1");
+                btnSpan.addClass("fas fa-edit mr-1");
+
+                $(spanid).attr("contenteditable", false);
+            }
+
+           
+        }
+    }
+
+</script>

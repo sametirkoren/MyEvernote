@@ -1,0 +1,38 @@
+﻿@using MyEvernote.Entities
+@using MyEvernote.WebApp.Models
+
+@model List<Comment>
+
+@{
+    EvernoteUser user = CurrentSession.User;
+} 
+
+@foreach (Comment item in Model)
+{
+    <div class="media">
+
+        <div class="media-left media-middle">
+            <div class="media-object">
+                <span class="fas fa-comment" style="margin-right : 1rem;"></span>
+            </div>
+        </div>
+        <div class="media-body" id="comment_text_@item.Id" contenteditable="false">
+            <span>@item.Text </span>
+
+            <br />
+            <small>
+                <span class="fas fa-time"></span>@item.ModifiedOn &nbsp; &nbsp; &nbsp; &nbsp;
+                <span class="fas fa-user"></span> @item.Owner.Username
+            </small>
+
+            @if (user != null && user.Id == item.Owner.Id)
+            {
+                <span>
+                    <button type="button" class="btn btn-outline-primary float-right" data-edit-mode="false" onclick="doComment(this,'edit_clicked',@item.Id,'#comment_text_@item.Id');"><span class="fas fa-edit mr-1"></span></button>
+                    <button type="button" class="btn btn-outline-danger float-right  mr-1"><span class="fas fa-trash mr-1"></span></button>
+                </span>
+
+            }
+        </div>
+    </div>
+}
