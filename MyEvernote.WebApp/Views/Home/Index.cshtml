@@ -142,12 +142,12 @@
                 button.addClass("btn-warning");
                 button.removeClass("btn-success");
                 var btnSpan = button.find("span");
-           
+
                 btnSpan.removeClass("fas fa-check mr-1");
                 btnSpan.addClass("fas fa-edit mr-1");
 
                 $(spanid).attr("contenteditable", false);
-               
+
 
 
                 var txt = $(spanid).text();
@@ -155,20 +155,37 @@
                 $.ajax({
                     method: "POST",
                     url: "/Comment/Edit/" + commentid,
-                    data: {text :txt}
-                }).done(function(data) {
+                    data: { text: txt }
+                }).done(function (data) {
                     if (data.result) {
                         $(modalCommentBodyId).load("/Comment/ShowNoteComments/" + noteid);
                         // yorumlar partial tekrar yüklenir
                     } else {
                         alert("Yorum güncellenemedi.");
                     }
-                }).fail(function() {
+                }).fail(function () {
                     alert("Sunucu ile bağlantı kurulamadı.");
                 })
             }
 
-           
+
+        }
+
+        else if (e === "delete_clicked") {
+            var dialog_res = confirm("Yorum silinsin mi ? ");
+            if (!dialog_res) return false;
+            $.ajax({
+                method: "GET",
+                url:"/Comment/Delete/" + commentid
+            }).done(function(data) {
+                if (data.result) {
+                    $(modalCommentBodyId).load("/Comment/ShowNoteComments/" + noteid);
+                } else {
+                    alert("Yorum silinemedi.");
+                }
+            }).fail(function() {
+                alert("Sunucu ile bağlantı kurulamadı.");
+            })
         }
     }
 

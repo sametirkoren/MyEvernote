@@ -29,7 +29,7 @@
             {
                 <span>
                     <button type="button" class="btn btn-outline-primary float-right" data-edit-mode="false" onclick="doComment(this,'edit_clicked',@item.Id,'#comment_text_@item.Id');"><span class="fas fa-edit mr-1"></span></button>
-                    <button type="button" class="btn btn-outline-danger float-right  mr-1"><span class="fas fa-trash mr-1"></span></button>
+                    <button type="button" class="btn btn-outline-danger float-right  mr-1" onclick="doComment(this,'delete_clicked',@item.Id)"><span class="fas fa-trash mr-1"></span></button>
                 </span>
 
             }
